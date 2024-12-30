@@ -70,6 +70,8 @@ Ensure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/ahmedsalman74/article-system.git
+```
+```bash
 cd article-system
 ```
 
