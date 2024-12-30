@@ -1,4 +1,4 @@
-```markdown
+
 # Article System API
 
 ![Schema Design](./assets/schema-design.png)
@@ -71,7 +71,7 @@ Ensure you have the following installed on your machine:
 ```bash
 git clone https://github.com/ahmedsalman74/article-system.git
 cd article-system
-```
+
 
 ### Install Dependencies
 
