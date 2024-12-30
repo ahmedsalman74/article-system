@@ -100,7 +100,7 @@ JWT_EXPIRES_IN=60m
 
 **Notes:**
 
-- **DATABASE_URL:** Replace `21PzFM9WqOyzAYiF` with your actual Supabase PostgreSQL password. Ensure there are no square brackets or extra characters.
+- **DATABASE_URL:** Replace `[your_actual_password]` with your actual Supabase PostgreSQL password. Ensure there are no square brackets or extra characters.
 
   ```
   DATABASE_URL=postgresql://postgres:your_actual_password@db.bpdnxadhcaavkfhmosvd.supabase.co:5432/postgres
