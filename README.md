@@ -216,5 +216,4 @@ This project is licensed under the [MIT License](./LICENSE).
 ---
 
 **Thank you for using the Article System API! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.**
-```
 
