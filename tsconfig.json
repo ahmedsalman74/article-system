@@ -2,6 +2,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "types": ["node", "express","jest"],
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -17,5 +19,9 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/types/**/*.d.ts"  // Adjusted to include all .d.ts files in the types directory
+  ]
 }

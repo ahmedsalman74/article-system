@@ -18,7 +18,8 @@ export class LikesService {
 
   // Like an article
   async like(articleId: number, user: User): Promise<Like> {
-    const article = await this.articlesRepository.findOne(articleId);
+    const article = await this.articlesRepository.findOne({ where: { id: articleId } });
+
     if (!article) {
       throw new NotFoundException(`Article with ID ${articleId} not found`);
     }
@@ -34,7 +35,7 @@ export class LikesService {
 
   // Undo like
   async undoLike(articleId: number, user: User): Promise<void> {
-    const article = await this.articlesRepository.findOne(articleId);
+    const article = await this.articlesRepository.findOne({ where: { id: articleId } });
     if (!article) {
       throw new NotFoundException(`Article with ID ${articleId} not found`);
     }

@@ -11,7 +11,6 @@ import { User } from './users/user.entity';
 import { Article } from './articles/article.entity';
 import { Comment } from './comments/comment.entity';
 import { Like } from './likes/like.entity';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [

@@ -19,7 +19,7 @@ export class CommentsService {
 
   // Create new comment
   async create(createCommentDto: CreateCommentDto, user: User): Promise<Comment> {
-    const article = await this.articlesRepository.findOne(createCommentDto.articleId);
+    const article = await this.articlesRepository.findOne({ where: { id: createCommentDto.articleId } });
     if (!article) {
       throw new NotFoundException(`Article with ID ${createCommentDto.articleId} not found`);
     }
@@ -43,7 +43,10 @@ export class CommentsService {
 
   // Delete comment
   async remove(id: number, user: User): Promise<void> {
-    const comment = await this.commentsRepository.findOne(id, { relations: ['author'] });
+    const comment = await this.commentsRepository.findOne({
+        where: { id: id },
+        relations: ['author']
+      });
     if (!comment) {
       throw new NotFoundException(`Comment with ID ${id} not found`);
     }

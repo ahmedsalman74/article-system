@@ -29,9 +29,12 @@ export class ArticlesService {
     return this.articlesRepository.find({ relations: ['author', 'comments', 'likes'] });
   }
 
-  // Find one article by ID
-  async findOne(id: number): Promise<Article> {
-    const article = await this.articlesRepository.findOne(id, { relations: ['author', 'comments', 'likes'] });
+// Find one article by ID
+async findOne(id: number): Promise<Article> {
+    const article = await this.articlesRepository.findOne({
+      where: { id: id },
+      relations: ['author', 'comments', 'likes']
+    });
     if (!article) {
       throw new NotFoundException(`Article with ID ${id} not found`);
     }
