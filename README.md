@@ -209,9 +209,7 @@ Contributions are welcome! Please follow the steps below to contribute to this p
 
 5. **Open a Pull Request**
 
-## License
 
-This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
