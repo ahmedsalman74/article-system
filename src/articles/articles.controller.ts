@@ -3,7 +3,7 @@ import { Controller, Get, Post, Body, Param, Put, Delete, UseGuards, Req } from 
 import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { PoliciesGuard } from '../auth/policies.guard'; 
 import { Request } from 'express';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
@@ -13,7 +13,7 @@ export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
 
   @Post()
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(PoliciesGuard) 
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Create a new article' })
   @ApiResponse({ status: 201, description: 'The article has been successfully created.' })
@@ -37,7 +37,7 @@ export class ArticlesController {
   }
 
   @Put(':id')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(PoliciesGuard) 
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Update an existing article' })
   @ApiResponse({ status: 200, description: 'The article has been successfully updated.' })
@@ -52,7 +52,7 @@ export class ArticlesController {
   }
 
   @Delete(':id')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(PoliciesGuard) 
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Delete an article' })
   @ApiResponse({ status: 200, description: 'The article has been successfully deleted.' })

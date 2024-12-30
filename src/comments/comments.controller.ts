@@ -2,7 +2,8 @@
 import { Controller, Post, Body, Delete, Param, UseGuards, Req } from '@nestjs/common';
 import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { PoliciesGuard } from '../auth/policies.guard'; 
+
 import { Request } from 'express';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
@@ -12,7 +13,7 @@ export class CommentsController {
   constructor(private readonly commentsService: CommentsService) {}
 
   @Post()
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(PoliciesGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Create a new comment' })
   @ApiResponse({ status: 201, description: 'The comment has been successfully created.' })
@@ -22,7 +23,7 @@ export class CommentsController {
   }
 
   @Delete(':id')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(PoliciesGuard)
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Delete a comment' })
   @ApiResponse({ status: 200, description: 'The comment has been successfully deleted.' })
