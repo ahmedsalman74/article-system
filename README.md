@@ -1,4 +1,4 @@
-```markdown
+
 # Article System API
 
 ![Schema Design](./assets/schema-design.png)
@@ -70,6 +70,8 @@ Ensure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/ahmedsalman74/article-system.git
+```
+```bash
 cd article-system
 ```
 
@@ -98,7 +100,7 @@ JWT_EXPIRES_IN=60m
 
 **Notes:**
 
-- **DATABASE_URL:** Replace `21PzFM9WqOyzAYiF` with your actual Supabase PostgreSQL password. Ensure there are no square brackets or extra characters.
+- **DATABASE_URL:** Replace `[your_actual_password]` with your actual Supabase PostgreSQL password. Ensure there are no square brackets or extra characters.
 
   ```
   DATABASE_URL=postgresql://postgres:your_actual_password@db.bpdnxadhcaavkfhmosvd.supabase.co:5432/postgres
@@ -207,12 +209,9 @@ Contributions are welcome! Please follow the steps below to contribute to this p
 
 5. **Open a Pull Request**
 
-## License
 
-This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
 **Thank you for using the Article System API! If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.**
-```
 
